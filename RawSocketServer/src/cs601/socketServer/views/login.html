@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <title>login</title>
+    <style>
+        .main-box{
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 40px;
+            /*box-shadow: 0px 0px 10px 1px;
+            box-shadow:inset 0 1px 1px rgba(0,0,0,.075)*/
+            margin-top: 6%;
+            width:60%;
+        }
+        .disappear{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+<div class="container main-box">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="text-center"><h2><strong>LOG IN</strong></h2></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="username">User Name:</label>
+                <input type="text" class="form-control" id="username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password"/>
+            </div>
+            <div id="errorMessage" class="alert alert-danger disappear"></div>
+            <button id="login" type="button" class="btn btn-primary btn-block" onclick="Login()">Login</button>
+            <div class="btn-group btn-group-justified">
+                <a class="btn btn-default" href="/Home/register">Rgister</a>
+                <a class="btn btn-default" href="/">Home</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+    function Login(){
+        $.post("/Home/login",{
+            username:$("#username").val(),
+            password:$("#password").val()
+        },
+        function(data, status){
+            if(data.success==true){
+                window.location.replace("/Hotel");
+            }
+            else{
+                $("#errorMessage").removeClass("disappear");
+                $("#errorMessage").html("<strong>Error!</strong>"+data.message);
+            }
+        });
+    }
+</script>
+</body>
+</html>

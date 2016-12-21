@@ -1,0 +1,16 @@
+{
+  "__comment":{
+    "comment1":"all the value should be STRING!!!",
+    "hostName":"sql.cs.usfca.edu"
+  },
+  "domainName":"localhost",
+  "port":"8000",
+  "viewsPath":"lab6/src/cs601/socketServer/views",
+  "userName":"user37",
+  "password":"404950",
+  "dataBase":"user37",
+  "hostName":"localhost:3307",
+  "sessionTime":"3600",
+  "pass":"123456!",
+  "defaultImg":"/images/default"
+}
