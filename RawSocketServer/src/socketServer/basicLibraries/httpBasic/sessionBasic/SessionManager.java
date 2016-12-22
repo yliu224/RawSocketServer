@@ -67,7 +67,7 @@ public class SessionManager extends SessionManagerBasic {
         Cookie c=new Cookie(SystemConstant.SESSION_ID,s.getSessionId());
         c.setDefault();
         s.extendExpireDate(60*60);
-        resp.setHeader(HttpConstant.H_COOKIE,c.toString());
+        resp.setHeader(HttpConstant.H_SET_COOKIE,c.toString());
     }
 
     /**
@@ -80,8 +80,7 @@ public class SessionManager extends SessionManagerBasic {
 
         //set cookie
         Cookie cookie = new Cookie(SystemConstant.SESSION_ID, sessionId);
-        cookie.setMaxAge(sessionTime==null?3600:Integer.parseInt(sessionTime));
-        cookie.setPath("/");
+        cookie.setDefault();
         resp.setHeader(HttpConstant.H_SET_COOKIE, cookie.toString());
 
         //set session

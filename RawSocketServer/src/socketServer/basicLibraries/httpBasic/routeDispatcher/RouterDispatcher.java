@@ -88,16 +88,6 @@ public class RouterDispatcher implements IRouterDispatcher {
                 else invokeErrorMethod(HttpConstant.SC_NOT_FOUND,resp);
             }
         }
-//        catch (NoSuchMethodException e) {
-//            e.printStackTrace();
-//            invokeErrorMethod(HttpConstant.SC_NOT_FOUND,resp);
-//        } //catch (IllegalAccessException e) {
-//            e.printStackTrace();
-//        } catch (InstantiationException e) {
-//            e.printStackTrace();
-//        } catch (InvocationTargetException e) {
-//            e.printStackTrace();
-//        }
         catch (Exception e){
             e.printStackTrace();
         }

@@ -1,5 +1,6 @@
 package  socketServer.basicLibraries.httpBasic.models;
 
+import socketServer.SocketServerDriver;
 import  socketServer.basicLibraries.fileReaderBasic.ConfigInfo;
 import  socketServer.basicLibraries.httpBasic.HttpConstant;
 import  socketServer.basicLibraries.httpBasic.sessionBasic.HttpSession;
@@ -29,13 +30,14 @@ public class HttpRequest {
     private String protocol;
     private String path;
     private final String regexParseHeader="(.*?): (.*)";
-    private BufferedReader reader=null;
     private final String regexParseFirstLine="(.*?) ";
     private JSONObject json;
+    private BufferedReader reader;
 
-    public HttpRequest(){
-        headers=new HashMap<>();
-        parameters=new HashMap<>();
+    public HttpRequest(BufferedReader reader){
+        this.headers=new HashMap<>();
+        this.parameters=new HashMap<>();
+        this.reader=reader;
     }
 
     /**
@@ -44,14 +46,21 @@ public class HttpRequest {
      */
     public void initializeHeaders(List<String> list){
         //parse first line
-        String[] fl=list.get(0).split(" ");
-        this.method =fl[0];
-        this.protocol = fl.length==2?fl[1]:fl[2];
-        this.path = fl.length==3?fl[1]:"";
+        try{
+            String[] fl=list.get(0).split(" ");
+            this.method =fl[0];
+            this.protocol = fl.length==2?fl[1]:fl[2];
+            this.path = fl.length==3?fl[1]:"";
+        }
+        catch (Exception e){
+            StringBuilder sb=new StringBuilder();
+            for(String s:list){
+                sb.append(s+"///");
+            }
+            SocketServerDriver.log.error("HEADER ERROR+\t"+sb.length()+"\t"+sb.toString());
+        }
 
-        //parse queries from url
-        parseGetQueries();
-        //parse other content of header
+        //Get header content
         Pattern p=Pattern.compile(regexParseHeader);
         for(int i=1;i<list.size();i++){
             Matcher m=p.matcher(list.get(i));
@@ -61,6 +70,18 @@ public class HttpRequest {
         }
         //if it contains cookie,than parse the cookie
         parseCookie();
+
+        //get parameters
+        switch (method){
+            case "GET":
+                parseGetQueries();
+                break;
+            case "POST":
+                parseFormData();
+                break;
+            default:
+                break;
+        }
     }
 
     public String getHeader(String name){
@@ -152,10 +173,8 @@ public class HttpRequest {
     }
     /**
      * Set bufferedReader and get parameters from POST method
-     * @param reader
      */
-    public void setFormData(BufferedReader reader){
-        this.reader=reader;
+    public void parseFormData(){
         String ct=this.headers.get(HttpConstant.H_CONTENT_TYPE);
         if(ct!=null){
             ct=ct.substring(0,ct.indexOf(";"));
@@ -185,6 +204,14 @@ public class HttpRequest {
         return null;
     }
 
+    /**
+     * Return a string of all the info in the request.
+     * This method only used for debug
+     * @return
+     */
+    public String toString(){
+        return null;
+    }
     /******************************private methods begin******************************/
     /**
      * Parse path info

@@ -88,10 +88,10 @@ public class Cookie {
         StringBuilder sb=new StringBuilder();
         sb.append(name+"="+value);
 
-        if(domain!=null&&!domain.equals("")) sb.append(";Domain="+domain);
-        if(expire!=null&&!expire.equals("")) sb.append(";Expires="+expire);
-        if(path!=null&&!path.equals("")) sb.append(";Path="+path);
-        if(maxAge!=-1) sb.append(";Max-Age="+maxAge);
+        if(domain!=null&&!domain.equals("")) sb.append("; Domain="+domain);
+        if(expire!=null&&!expire.equals("")) sb.append("; Expires="+expire);
+        if(path!=null&&!path.equals("")) sb.append("; Path="+path);
+        if(maxAge!=-1) sb.append("; Max-Age="+maxAge);
 
         return sb.toString();
     }

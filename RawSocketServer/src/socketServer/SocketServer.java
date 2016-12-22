@@ -58,12 +58,16 @@ public class SocketServer {
             OutputStream out=null;
             String input="";
             HttpResponse response;
-            HttpRequest request=new HttpRequest();
+            HttpRequest request;
             List<String> httpHeaderInfo=new ArrayList<>();
             try {
                 if(connection==null) return;
                 reader=new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 out=connection.getOutputStream();
+                //new request and response
+                request=new HttpRequest(reader);
+                response=new HttpResponse(out);
+
 
                 if(reader==null||out==null) return;
                 //TODO:always popup null pointer exception.WHY???
@@ -75,33 +79,8 @@ public class SocketServer {
                     httpHeaderInfo.add(input);
                 }
                 if(httpHeaderInfo==null) return;
+
                 request.initializeHeaders(httpHeaderInfo);
-                response=new HttpResponse(out);
-
-                if(request.getMethod().equals("POST")){
-                    request.setFormData(reader);
-                }
-
-
-//                HttpBaseHandler handler=(HttpBaseHandler) handlerSet.getHandler(request.getPath());
-//
-////                if(handler==null){
-////                    response.setHeader("Content-Type",HttpConstant.CT_HTML);
-////                    response.setContent(new FileReader().getHtml("404"));
-////                    response.setStatusCode(HttpConstant.SC_NOT_FOUND);
-////                    response.send();
-////                }
-//                if(handler==null){
-//                    HttpBaseHandler handlerBase=(HttpBaseHandler)handlerSet.getHandler("Base");
-//                    handlerBase.doGet(request,response);
-//                }
-//                else if(request.getMethod().equals("GET")){
-//                    handler.doGet(request,response);
-//                }
-//                else if(request.getMethod().equals("POST")){
-//                    request.setFormData(reader);
-//                    handler.doPost(request,response);
-//                }
 
                 RouterDispatcher.getInstance().dispatchRequest(request,response);
             } catch (IOException e) {

@@ -85,7 +85,8 @@ public class HomeController extends Controller {
     }
     @Get
     public ActionResult getUserInfo(String session_id){
-        HttpSession session=SessionManager.getInstance().getSession(session_id);
+        SessionManager sessionManager=SessionManager.getInstance();
+        HttpSession session=sessionManager.getSession(session_id);
 
         if(session==null){
             return new ActionResult(ActionResult.JSON,JsonHelper.creatMessage(false,"User not exist in the session"));

@@ -89,8 +89,7 @@ public class WorkQueue {
 				}
 				try {
 					r.run();
-				} catch (RuntimeException ignore) {
-				}
+				} catch (RuntimeException ignore) {}
 			}
 		}
 	}
