@@ -28,11 +28,13 @@ public class DataImporter {
         builder.shutdown();
         System.out.println("Loading complete! :)");
         //importUsers(data);
-        //addReviews(data);
+        addReviews(data);
+        //addHotel(data);
     }
     public static void addHotel(ThreadSafeHotelData data){
         List<HotelModel> lh=new ArrayList<>();
         HotelHandler hh=new HotelHandler();
+        System.out.println("Connected to the DB");
         for(Hotel hotel:data.gethotelList().values()){
             Address addOld=hotel.getAddressInfo();
             AddressModel add=new AddressModel(addOld.getStreetAddress(),
@@ -44,7 +46,9 @@ public class DataImporter {
             HotelModel h=new HotelModel(hotel.getHotelId(),hotel.getHotelName(),add);
             lh.add(h);
         }
+        System.out.println("Start uploading");
         System.out.println(hh.addMultipleHotel(lh));
+        System.out.println("End uploading");
     }
 
     public static void addReviews(ThreadSafeHotelData data){
@@ -64,7 +68,10 @@ public class DataImporter {
             }
         }
         ReviewHandler rh=new ReviewHandler();
+        System.out.println("Connected to the DB");
+        System.out.println("Start uploading");
         rh.addMultipleReview(lr);
+        System.out.println("End uploading");
     }
 
     public static void importUsers(ThreadSafeHotelData data){

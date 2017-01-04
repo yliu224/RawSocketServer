@@ -3,13 +3,25 @@
     "comment1":"all the value should be STRING!!!",
     "hostName":"localhost:3307"
   },
+  "__AWSDBConfig":{
+    "userName":"dingdingvsjj",
+    "password":"5511774aA",
+    "dataBase":"Demo",
+    "hostName":"yidingliu.crmykklbiahm.us-west-2.rds.amazonaws.com"
+  },
+  "__USFDBConfig":{
+    "userName":"user37",
+    "password":"404950",
+    "dataBase":"user37",
+    "hostName":"sql.cs.usfca.edu"
+  },
   "domainName":"localhost",
   "port":"8000",
   "viewsPath":"RawSocketServer/src/socketServer/views",
-  "userName":"user37",
-  "password":"404950",
-  "dataBase":"user37",
-  "hostName":"sql.cs.usfca.edu",
+  "userName":"dingdingvsjj",
+  "password":"5511774aA",
+  "dataBase":"Demo",
+  "hostName":"yidingliu.crmykklbiahm.us-west-2.rds.amazonaws.com",
   "sessionTime":"3600",
   "pass":"123456!",
   "defaultImg":"/images/default"

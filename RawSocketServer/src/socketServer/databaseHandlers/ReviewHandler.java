@@ -56,6 +56,7 @@ public class ReviewHandler extends SQLBaseHandler {
                     statement.setString(5, review.getUserName().toString());
                     statement.setInt(7, review.getOverallRating());
                     statement.setBoolean(8, review.getIsRecom());
+                    statement.setInt(9,0);
 
                     SimpleDateFormat sdf=new SimpleDateFormat("yyy-MM-DD'T'hh:mm:ss'Z'");
                     Date d=new Date();
