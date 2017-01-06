@@ -1,5 +1,5 @@
 /**
- * Created by chkui on 2016/11/16.
+ * Merged into server repository
  */
 import React from 'react'
 import {render} from 'react-dom'
