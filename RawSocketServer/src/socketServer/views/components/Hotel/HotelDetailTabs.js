@@ -19,9 +19,11 @@ class HotelDetailTabs extends React.Component{
         children.forEach((item)=>{
             if(item.textContent.toLocaleLowerCase()==selectedTab){
                 item.className="active";
+                item.children[0].className="hotelTabs";
             }
             else{
                 item.className="";
+                item.children[0].className="";
             }
         });
     }
@@ -52,9 +54,9 @@ class HotelDetailTabs extends React.Component{
         return(
         <div className="container" style={{marginTop:'30px'}}>
             <ul className="nav nav-tabs" ref={(ul)=>{this.list=ul;}}>
-                <li onClick={(e)=>{this.changeTab(e,'reviews')}} key="reviews"><a href="#">Reviews</a></li>
-                <li onClick={(e)=>{this.changeTab(e,'tourist attraction')}} key="tourist attraction"><a href="#">Tourist Attraction</a></li>
-                <li onClick={(e)=>{this.changeTab(e,'google maps')}} key="google maps"><a href="#">Google Maps</a></li>
+                <li onClick={(e)=>{this.changeTab(e,'reviews')}} key="reviews"><a href="">Reviews</a></li>
+                <li onClick={(e)=>{this.changeTab(e,'tourist attraction')}} key="tourist attraction"><a href="">Tourist Attraction</a></li>
+                <li onClick={(e)=>{this.changeTab(e,'google maps')}} key="google maps"><a href="">Google Maps</a></li>
             </ul>
             {this.tabContent}
         </div>
