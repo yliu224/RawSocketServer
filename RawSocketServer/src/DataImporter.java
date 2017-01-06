@@ -28,7 +28,7 @@ public class DataImporter {
         builder.shutdown();
         System.out.println("Loading complete! :)");
         //importUsers(data);
-        addReviews(data);
+        //addReviews(data);
         //addHotel(data);
     }
     public static void addHotel(ThreadSafeHotelData data){
