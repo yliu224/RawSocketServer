@@ -30,6 +30,7 @@ public class DataImporter {
         //importUsers(data);
         //addReviews(data);
         //addHotel(data);
+
     }
     public static void addHotel(ThreadSafeHotelData data){
         List<HotelModel> lh=new ArrayList<>();
