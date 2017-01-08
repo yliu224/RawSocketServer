@@ -24,5 +24,6 @@
   "hostName":"yidingliu.crmykklbiahm.us-west-2.rds.amazonaws.com",
   "sessionTime":"3600",
   "pass":"123456!",
-  "defaultImg":"/images/default"
+  "defaultImg":"/images/default",
+  "acceptFileType":"css|js|png|jpg|html|doc|xml|eot|ttf|woff|woff2"
 }

@@ -1,5 +1,6 @@
 package  socketServer.basicLibraries.httpBasic.routeDispatcher;
 
+import socketServer.basicLibraries.fileReaderBasic.ConfigInfo;
 import  socketServer.basicLibraries.helperBasic.JsonHelper;
 import  socketServer.basicLibraries.httpBasic.models.ActionResult;
 import  socketServer.basicLibraries.httpBasic.HttpConstant;
@@ -309,14 +310,10 @@ public class RouterDispatcher implements IRouterDispatcher {
      * @return
      */
     private boolean isFilePath(String path){
-        if(
-                path.endsWith(".jpg")||
-                path.endsWith(".png")||
-                path.endsWith(".js")||
-                path.endsWith(".html")||
-                path.endsWith(".doc")||
-                path.endsWith(".xml")||
-                path.endsWith(".css")) return true;
+        String fileType=path.substring(path.lastIndexOf(".")+1);
+        String acceptFileType= ConfigInfo.getConfig("acceptFileType");
+
+        if(acceptFileType.contains(fileType)) return true;
         else return false;
     }
     /*****************************private method end*****************************/

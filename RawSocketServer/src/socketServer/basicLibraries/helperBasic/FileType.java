@@ -7,5 +7,6 @@ public enum FileType {
     IMAGE,
     COMMON_FILE,
     UPLOAD_FILE,
-    DOWNLOAD_FILE
+    DOWNLOAD_FILE,
+    UNDEFINED
 }

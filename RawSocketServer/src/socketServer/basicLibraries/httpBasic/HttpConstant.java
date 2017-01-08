@@ -20,6 +20,7 @@ public class HttpConstant {
     public static final String CT_JPG="image/jpeg";
     public static final String CT_PNG=" image/png";
     public static final String CT_SVG="text/xml";
+    public static final String CT_FONT="text/plain";
     //headers name
     public static final String H_CONTENT_TYPE="Content-Type";
     public static final String H_SERVER="Server";
