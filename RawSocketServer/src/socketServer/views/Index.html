@@ -29,7 +29,19 @@
             height: 100%;
         }
         /* Navigation*/
-
+        @media (min-width: 1400px) {
+            .container{
+                width:100%;
+                padding-left:5%;
+                padding-right:5%;
+            }
+        }
+        .nav-link.active{
+            background-color:rgba(255,255,255,.1);
+        }
+        .navbar-right{
+            float:right;
+        }
         .navbar {
             background-color: transparent;
         }
@@ -101,7 +113,7 @@
 
 </head>
 
-<body>
+<body id="homePage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
 
 <!--Navbar-->
@@ -117,20 +129,22 @@
         <!--Collapse content-->
         <div class="collapse navbar-toggleable-xs" id="collapseEx">
             <!--Navbar Brand-->
-            <a class="navbar-brand" href="#">一丁 | Yiding</a>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">一丁 | Yiding</a>
+            </div>
             <!--Links-->
-            <ul class="nav navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#education">Education</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="#skills">Skills</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#projects">Projects</a>
                 </li>
             </ul>
             <!--Search form
@@ -146,12 +160,12 @@
 <!--/.Navbar-->
 
 <!--Carousel Wrapper-->
-<div id="carousel-example-1" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
+<div id="home" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
     <!--Indicators-->
     <ol class="carousel-indicators">
-        <li data-target="#carousel-example-1" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-1" data-slide-to="1"></li>
-        <li data-target="#carousel-example-1" data-slide-to="2"></li>
+        <li data-target="#home" data-slide-to="0" class="active"></li>
+        <li data-target="#home" data-slide-to="1"></li>
+        <li data-target="#home" data-slide-to="2"></li>
     </ol>
     <!--/.Indicators-->
 
@@ -165,15 +179,13 @@
                 <div class="full-bg-img flex-center">
                     <ul class="animated fadeInUp col-md-12">
                         <li>
-                            <h1 class="h1-responsive flex-item">Material Design for Bootstrap 4</h1>
-                        <li>
-                            <p class="flex-item">The most powerful and free UI KIT for Bootstrap</p>
+                            <h1 class="h1-responsive">Looking for 2017 summer intern</h1>
                         </li>
                         <li>
-                            <a target="_blank" href="http://mdbootstrap.com/getting-started/" class="btn btn-primary btn-lg flex-item">Sign up!</a>
+                            <p>yliu224@dons.usfca.edu</p>
                         </li>
                         <li>
-                            <a target="_blank" href="http://mdbootstrap.com/material-design-for-bootstrap/" class="btn btn-default btn-lg flex-item">Learn more</a>
+                            <a target="_blank" href="https://www.linkedin.com/in/yiding-liu-152825108" class="btn btn-primary btn-lg">Linkedin</a>
                         </li>
                     </ul>
                 </div>
@@ -228,11 +240,11 @@
     <!--/.Slides-->
 
     <!--Controls-->
-    <a class="left carousel-control" href="#carousel-example-1" role="button" data-slide="prev">
+    <a class="left carousel-control" href="#home" role="button" data-slide="prev">
         <span class="icon-prev" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#carousel-example-1" role="button" data-slide="next">
+    <a class="right carousel-control" href="#home" role="button" data-slide="next">
         <span class="icon-next" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
@@ -240,72 +252,149 @@
 </div>
 <!--/.Carousel Wrapper-->
 <!--/.Main layout-->
+<div id="education" class="container-fluid bg-grey">
+    <div class="row">
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-globe logo slideanim"></span>
+        </div>
+        <div class="col-sm-8">
+            <h2>Our Values</h2><br>
+            <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
+            <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+    </div>
+</div>
+<!-- Container (Services Section) -->
+<div id="skills" class="container-fluid text-center bg-grey">
+    <h2>Portfolio</h2><br>
+    <h4>What we have created</h4>
+    <div class="row text-center slideanim">
+        <div class="col-sm-4">
+            <div class="thumbnail">
+                <img src="paris.jpg" alt="Paris" width="400" height="300">
+                <p><strong>Paris</strong></p>
+                <p>Yes, we built Paris</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="thumbnail">
+                <img src="newyork.jpg" alt="New York" width="400" height="300">
+                <p><strong>New York</strong></p>
+                <p>We built New York</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="thumbnail">
+                <img src="sanfran.jpg" alt="San Francisco" width="400" height="300">
+                <p><strong>San Francisco</strong></p>
+                <p>Yes, San Fran is ours</p>
+            </div>
+        </div>
+    </div><br>
 
+    <h2>What our customers say</h2>
+    <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
 
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <h4>"This company is the best. I am so happy with the result!"<br><span style="font-style:normal;">Michael Roe, Vice President, Comment Box</span></h4>
+            </div>
+            <div class="item">
+                <h4>"One word... WOW!!"<br><span style="font-style:normal;">John Doe, Salesman, Rep Inc</span></h4>
+            </div>
+            <div class="item">
+                <h4>"Could I... BE any more happy with this company?"<br><span style="font-style:normal;">Chandler Bing, Actor, FriendsAlot</span></h4>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+<!-- Container (Pricing Section) -->
+<div id="projects" class="container-fluid">
+    <div class="text-center">
+        <h2>Pricing</h2>
+        <h4>Choose a payment plan that works for you</h4>
+    </div>
+    <div class="row slideanim">
+        <div class="col-sm-4 col-xs-12">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <h1>Basic</h1>
+                </div>
+                <div class="panel-body">
+                    <p><strong>20</strong> Lorem</p>
+                    <p><strong>15</strong> Ipsum</p>
+                    <p><strong>5</strong> Dolor</p>
+                    <p><strong>2</strong> Sit</p>
+                    <p><strong>Endless</strong> Amet</p>
+                </div>
+                <div class="panel-footer">
+                    <h3>$19</h3>
+                    <h4>per month</h4>
+                    <button class="btn btn-lg">Sign Up</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <h1>Pro</h1>
+                </div>
+                <div class="panel-body">
+                    <p><strong>50</strong> Lorem</p>
+                    <p><strong>25</strong> Ipsum</p>
+                    <p><strong>10</strong> Dolor</p>
+                    <p><strong>5</strong> Sit</p>
+                    <p><strong>Endless</strong> Amet</p>
+                </div>
+                <div class="panel-footer">
+                    <h3>$29</h3>
+                    <h4>per month</h4>
+                    <button class="btn btn-lg">Sign Up</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading">
+                    <h1>Premium</h1>
+                </div>
+                <div class="panel-body">
+                    <p><strong>100</strong> Lorem</p>
+                    <p><strong>50</strong> Ipsum</p>
+                    <p><strong>25</strong> Dolor</p>
+                    <p><strong>10</strong> Sit</p>
+                    <p><strong>Endless</strong> Amet</p>
+                </div>
+                <div class="panel-footer">
+                    <h3>$49</h3>
+                    <h4>per month</h4>
+                    <button class="btn btn-lg">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!--Footer-->
 <footer class="page-footer center-on-small-only">
-
-    <!--Footer Links-->
-    <div class="container-fluid">
-        <div class="row">
-
-            <!--First column-->
-            <div class="col-md-3 offset-lg-1 hidden-lg-down">
-                <h5 class="title">ABOUT MATERIAL DESIGN</h5>
-                <p>Material Design (codenamed Quantum Paper) is a design language developed by Google. </p>
-
-                <p>Material Design for Bootstrap (MDB) is a powerful Material Design UI KIT for most popular HTML, CSS, and JS framework - Bootstrap.</p>
-            </div>
-            <!--/.First column-->
-
-            <hr class="hidden-md-up">
-
-            <!--Second column-->
-            <div class="col-lg-2 col-md-4 offset-lg-1">
-                <h5 class="title">First column</h5>
-                <ul>
-                    <li><a href="#!">Link 1</a></li>
-                    <li><a href="#!">Link 2</a></li>
-                    <li><a href="#!">Link 3</a></li>
-                    <li><a href="#!">Link 4</a></li>
-                </ul>
-            </div>
-            <!--/.Second column-->
-
-            <hr class="hidden-md-up">
-
-            <!--Third column-->
-            <div class="col-lg-2 col-md-4">
-                <h5 class="title">Second column</h5>
-                <ul>
-                    <li><a href="#!">Link 1</a></li>
-                    <li><a href="#!">Link 2</a></li>
-                    <li><a href="#!">Link 3</a></li>
-                    <li><a href="#!">Link 4</a></li>
-                </ul>
-            </div>
-            <!--/.Third column-->
-
-            <hr class="hidden-md-up">
-
-            <!--Fourth column-->
-            <div class="col-lg-2 col-md-4">
-                <h5 class="title">Third column</h5>
-                <ul>
-                    <li><a href="#!">Link 1</a></li>
-                    <li><a href="#!">Link 2</a></li>
-                    <li><a href="#!">Link 3</a></li>
-                    <li><a href="#!">Link 4</a></li>
-                </ul>
-            </div>
-            <!--/.Fourth column-->
-
-        </div>
-    </div>
-    <!--/.Footer Links-->
-
-    <hr>
 
     <!--Call to action-->
     <div class="call-to-action">
