@@ -109,12 +109,54 @@
                 margin-bottom: 1.5rem;
             }
         }
+        /*Slide animation*/
+        .slideanim {visibility:hidden;}
+        .slide {
+            animation-name: slide;
+            -webkit-animation-name: slide;
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+            visibility: visible;
+        }
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+        @-webkit-keyframes slide {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0%);
+            }
+        }
+        /*General Style*/
+        .content{
+            padding:60px 50px;
+        }
+        /*Education content*/
+        .edu-img{
+            padding:0 5% 0 0;
+        }
+        .edu-ul{
+            padding-left:20px;
+        }
+        .edu-ul li{
+            list-style-type:disc;
+        }
     </style>
 
 </head>
 
-<body id="homePage" data-spy="scroll" data-target=".navbar" data-offset="60">
-
+<body id="homePage" data-spy="scroll" data-target=".navbar" data-offset="54">
 
 <!--Navbar-->
 <nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
@@ -182,10 +224,10 @@
                             <h1 class="h1-responsive">Looking for 2017 summer intern</h1>
                         </li>
                         <li>
-                            <p>yliu224@dons.usfca.edu</p>
+                            <p>ydliu1993@gmail.com</p>
                         </li>
                         <li>
-                            <a target="_blank" href="https://www.linkedin.com/in/yiding-liu-152825108" class="btn btn-primary btn-lg">Linkedin</a>
+                            <a target="_blank" href="https://www.linkedin.com/in/yiding-liu-152825108" class="btn btn-primary btn-lg"><i class="fa fa-linkedin left"></i> Linkedin</a>
                         </li>
                     </ul>
                 </div>
@@ -201,13 +243,13 @@
                 <div class="full-bg-img flex-center">
                     <ul class="animated fadeInUp col-md-12">
                         <li>
-                            <h1 class="h1-responsive">Lots of tutorials at your disposal</h1>
+                            <h1 class="h1-responsive">Course final project--Hotel search site</h1>
                         </li>
                         <li>
-                            <p>And all of them are FREE!</p>
+                            <p>Built with:JAVA Socket,ReactJS,Bootstrap,MySQL</p>
                         </li>
                         <li>
-                            <a target="_blank" href="http://mdbootstrap.com/bootstrap-tutorial/" class="btn btn-primary btn-lg">Start learning</a>
+                            <a target="_blank" href="http://54.187.252.181:8000/Home/register" class="btn btn-primary btn-lg">Learn more</a>
                         </li>
                     </ul>
                 </div>
@@ -223,12 +265,13 @@
                 <div class="full-bg-img flex-center">
                     <ul class="animated fadeInUp col-md-12">
                         <li>
-                            <h1 class="h1-responsive">Visit our support forum</h1></li>
-                        <li>
-                            <p>Our community can help you with any question</p>
+                            <h1 class="h1-responsive">LYCS Architecture</h1>
                         </li>
                         <li>
-                            <a target="_blank" href="http://mdbootstrap.com/forums/forum/support/" class="btn btn-default btn-lg">Support forum</a>
+                            <p>Built with:Orchard CMS(.net framework),JQuery,MasonryJS,MySQL</p>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://lycs-arc.com/Home_EN" class="btn btn-default btn-lg">Learn more</a>
                         </li>
                     </ul>
                 </div>
@@ -252,16 +295,32 @@
 </div>
 <!--/.Carousel Wrapper-->
 <!--/.Main layout-->
-<div id="education" class="container-fluid bg-grey">
+<div id="education" class="content">
     <div class="row">
         <div class="col-sm-4">
-            <span class="glyphicon glyphicon-globe logo slideanim"></span>
+            <h2>University of San Francisco</h2><br>
+            <h4>M.S, Computer Science</h4>
+            <p>Graduation day:Expected May 2018</p>
+            <ul class="edu-ul">
+                <li>GPA : 3.85 / 4.0</li>
+                <li>Winter teaching assistant (2017)</li>
+            </ul>
         </div>
-        <div class="col-sm-8">
-            <h2>Our Values</h2><br>
-            <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-            <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="col-sm-2 edu-img">
+            <img class="logo slideanim text-sm-center" width="100%" height="100%" src="images/logo/usf.jpg" alt="usf">
+        </div>
+
+        <div class="col-sm-4">
+            <h2>Zhe Jiang Normal University</h2><br>
+            <h4>B.S, Network Engineering</h4>
+            <p>Graduation day:June 2015</p>
+            <ul class="edu-ul">
+                <li>Zhejiang Normal University Outstanding Graduate Student (2015)</li>
+                <li>Silver Medal in 2013 ACM-ICPC China Hangzhou Invitational Programming Contest (2013)</li>
+            </ul>
+        </div>
+        <div class="col-sm-2 edu-img">
+            <img class="logo slideanim text-sm-center" width="100%" height="100%" src="images/logo/zjnu.jpg" alt="zjnu">
         </div>
     </div>
 </div>
@@ -435,6 +494,43 @@
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="js/mdb.min.js"></script>
 
+<script>
+    $(document).ready(function(){
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                //54 is the offset the navbar
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top-54
+                }, 900, function(){
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+
+        $(window).scroll(function() {
+            $(".slideanim").each(function(){
+                var pos = $(this).offset().top;
+
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
+    })
+</script>
 
 </body>
 
