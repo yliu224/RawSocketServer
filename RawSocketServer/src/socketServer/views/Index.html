@@ -8,6 +8,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title>Material Design Bootstrap</title>
+    <!-- Material UI -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
@@ -21,153 +24,11 @@
     <!--Hexagons Style-->
     <link href="css/hexagons.css" rel="stylesheet">
 
-    <!-- Template styles -->
-    <style rel="stylesheet">
-        /* TEMPLATE STYLES */
-        /* Necessary for full page carousel*/
+    <!--Custom Style-->
+    <link href="css/indexHome.css" rel="stylesheet">
 
-        html,
-        body,
-        .view {
-            height: 100%;
-        }
-        /* Navigation*/
-        .nav-link.active{
-            background-color:rgba(255,255,255,.1);
-        }
-        .navbar-right{
-            float:right;
-        }
-        .navbar {
-            background-color: transparent;
-        }
-
-        .scrolling-navbar {
-            -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
-            -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
-            transition: background .5s ease-in-out, padding .5s ease-in-out;
-        }
-
-        .top-nav-collapse {
-            background-color: #1C2331;
-        }
-
-        footer.page-footer {
-            background-color: #1C2331;
-            margin-top: 0;
-        }
-
-        @media only screen and (max-width: 768px) {
-            .navbar {
-                background-color: #1C2331;
-            }
-        }
-        /* Carousel*/
-
-        .carousel,
-        .carousel-item,
-        .active {
-            height: 100%;
-        }
-
-        .carousel-inner {
-            height: 100%;
-        }
-
-        .carousel-item:nth-child(1) {
-            background-image: url("http://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20(1).jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .carousel-item:nth-child(2) {
-            background-image: url("http://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20(2).jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .carousel-item:nth-child(3) {
-            background-image: url("http://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20(3).jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        /*Caption*/
-
-        .flex-center {
-            color: #fff;
-        }
-
-        @media (min-width: 776px) {
-            .carousel .view ul li {
-                display: inline;
-            }
-            .carousel .view .full-bg-img ul li .flex-item {
-                margin-bottom: 1.5rem;
-            }
-        }
-        /*Slide animation*/
-        .slideanim {visibility:hidden;}
-        .slide {
-            animation-name: slide;
-            -webkit-animation-name: slide;
-            animation-duration: 1s;
-            -webkit-animation-duration: 1s;
-            visibility: visible;
-        }
-        @keyframes slide {
-            0% {
-                opacity: 0;
-                transform: translateY(70%);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0%);
-            }
-        }
-        @-webkit-keyframes slide {
-            0% {
-                opacity: 0;
-                -webkit-transform: translateY(70%);
-            }
-            100% {
-                opacity: 1;
-                -webkit-transform: translateY(0%);
-            }
-        }
-        /*General Style*/
-        .content{
-            padding:60px 50px;
-        }
-        /*Education content*/
-        .edu-img{
-            padding:0 5% 0 0;
-        }
-        .edu-ul{
-            padding-left:20px;
-        }
-        .edu-ul li{
-            list-style-type:disc;
-        }
-        .overlay img{
-            width:100%;
-        }
-        /*Background*/
-        .bg-grey{
-            background-color: #1C2331;
-        }
-        /*Icon styles*/
-        .icon-4{
-            font-size:4em;
-        }
-        .icon-3{
-            font-size:3em;
-        }
-        .icon-2{
-            font-size:2em;
-        }
-    </style>
-    <!--Font Awesome-->
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <!--&lt;!&ndash;Font Awesome&ndash;&gt;-->
+    <!--<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">-->
 </head>
 
 <body id="homePage" data-spy="scroll" data-target=".navbar" data-offset="54">
@@ -313,9 +174,7 @@
     <div class="divider-new">
         <h2 class="h2-responsive wow bounceIn" style="visibility: visible; animation-name: bounceIn;">Education</h2>
     </div>
-
     <div class="row">
-
         <!--First columnn-->
         <div class="col-md-4">
             <!--Card-->
@@ -336,7 +195,15 @@
                     <h4 class="card-title">M.S, Computer Science</h4>
                     <hr>
                     <!--Text-->
-                    <p>djfkdjfkdjf</p>
+                    <p>In progress. GPA:3.85/4.0</p>
+                    <div id="p3" class="mdl-progress mdl-js-progress"></div>
+                    <script>
+                        document.querySelector('#p3').addEventListener('mdl-componentupgraded', function() {
+                            this.MaterialProgress.setProgress(33);
+                            this.MaterialProgress.setBuffer(87);
+                        });
+                    </script>
+                    <!--/.Text-->
                 </div>
                 <!--/.Card content-->
 
@@ -360,12 +227,12 @@
                 <!--/.Card image-->
 
                 <!--Card content-->
-                <div class="card-block text-xs-center">
+                <div class="card-block text-xs-center stamp">
                     <!--Title-->
                     <h4 class="card-title">B.S, Network Engineering</h4>
                     <hr>
                     <!--Text-->
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident fuga animi architecto dolores dicta cum quo velit.</p>
+                    <p class="card-text">Zhejiang Normal University Outstanding Graduate Student (2015).Silver Medal in 2013 ACM-ICPC China Hangzhou Invitational Programming Contest (2013).</p>
                 </div>
                 <!--/.Card content-->
 
@@ -380,7 +247,7 @@
 
                 <!--Card image-->
                 <div class="view overlay hm-white-slight">
-                    <img src="images/logo/zjnu.jpg" class="img-fluid" alt="">
+                    <img src="images/logo/sy.jpg" class="img-fluid" alt="">
                     <a>
                         <div class="mask waves-effect waves-light"></div>
                     </a>
@@ -388,12 +255,12 @@
                 <!--/.Card image-->
 
                 <!--Card content-->
-                <div class="card-block text-xs-center">
+                <div class="card-block text-xs-center stamp">
                     <!--Title-->
-                    <h4 class="card-title">B.S, Network Engineering</h4>
+                    <h4 class="card-title">Middle School</h4>
                     <hr>
                     <!--Text-->
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident fuga animi architecto dolores dicta cum quo velit.</p>
+                    <p class="card-text">It's a private middle school granted by Sichuan Provincial Department of Education in 2000. There are 45 classes, nealy 2000 students, 285 faculty members.</p>
                 </div>
                 <!--/.Card content-->
 
@@ -404,154 +271,128 @@
     </div>
 </div>
 <!-- Container (Services Section) -->
-<div id="skills" class="text-sm-center bg-grey container">
-    <h1 class="text-white">Skills</h1>
-    <ul id="hexGrid">
-        <li class="hex">
-            <a class="hexIn" href="#">
-                <img src="images/logo/java.jpg" style="transform:scale(0.9,0.9);top:-4%;" alt="">
-                <h1>PROFICIENT</h1>
-                <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
-            </a>
-        </li>
-        <li class="hex">
-            <a class="hexIn" href="#">
-                <img src="images/logo/js.jpg" style="transform: scale(0.73,0.73);" alt="">
-                <h1>PROFICIENT</h1>
-                <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
-            </a>
-        </li>
-        <li class="hex">
-            <a class="hexIn" href="#">
-                <img src="images/logo/html.jpg" style="transform: scale(0.7,0.7);" alt="">
-                <h1>PROFICIENT</h1>
-                <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
-            </a>
-        </li>
-        <li class="hex">
-            <a class="hexIn" href="#">
-                <img src="images/logo/css.jpg" style="transform: scale(0.73,0.73);" alt="">
-                <h1>PROFICIENT</h1>
-                <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
-            </a>
-        </li>
-        <li class="hex">
-            <a class="hexIn" href="#">
-                <img src="images/logo/mysql.jpg" alt="">
-                <h1>PROFICIENT</h1>
-                <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
-            </a>
-        </li>
-        <li class="hex">
-            <a class="hexIn" href="#">
-                <img src="images/logo/react.jpg" style="transform: scale(0.6,0.6);" alt="">
-                <h1>PROFICIENT</h1>
-                <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
-            </a>
-        </li>
-        <li class="hex">
-            <a class="hexIn" href="#">
-                <img src="images/logo/android-robot.png" style="transform: scale(0.6,0.6);" alt="">
-                <h1>ADVANCED</h1>
-                <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
-            </a>
-        </li>
-        <li class="hex">
-            <a class="hexIn" href="#">
-                <img src="images/logo/spring.png" style="transform: scale(0.5,0.5);top:-2%;" alt="">
-                <h1>ADVANCED</h1>
-                <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
-            </a>
-        </li>
-        <li class="hex">
-            <a class="hexIn" href="#">
-                <img src="images/logo/bootstrap.jpg" style="transform: scale(0.6,0.6);" alt="">
-                <h1>ADVANCED</h1>
-                <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
-            </a>
-        </li>
-    </ul>
+<div class="text-sm-center bg-grey">
+    <div id="skills" class="container">
+        <div class="divider-dark">
+            <h2 class="h2-responsive wow bounceIn" style="visibility: visible; animation-name: bounceIn;">Skills</h2>
+        </div>
+        <ul id="hexGrid">
+            <li class="hex">
+                <a class="hexIn" href="#">
+                    <img src="images/logo/java.jpg" style="transform:scale(0.9,0.9);top:-4%;" alt="">
+                    <h1>PROFICIENT</h1>
+                    <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
+                </a>
+            </li>
+            <li class="hex">
+                <a class="hexIn" href="#">
+                    <img src="images/logo/js.jpg" style="transform: scale(0.73,0.73);" alt="">
+                    <h1>PROFICIENT</h1>
+                    <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
+                </a>
+            </li>
+            <li class="hex">
+                <a class="hexIn" href="#">
+                    <img src="images/logo/html.jpg" style="transform: scale(0.7,0.7);" alt="">
+                    <h1>PROFICIENT</h1>
+                    <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
+                </a>
+            </li>
+            <li class="hex">
+                <a class="hexIn" href="#">
+                    <img src="images/logo/css.jpg" style="transform: scale(0.73,0.73);" alt="">
+                    <h1>PROFICIENT</h1>
+                    <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
+                </a>
+            </li>
+            <li class="hex">
+                <a class="hexIn" href="#">
+                    <img src="images/logo/mysql.jpg" alt="">
+                    <h1>PROFICIENT</h1>
+                    <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
+                </a>
+            </li>
+            <li class="hex">
+                <a class="hexIn" href="#">
+                    <img src="images/logo/react.jpg" style="transform: scale(0.6,0.6);" alt="">
+                    <h1>PROFICIENT</h1>
+                    <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
+                </a>
+            </li>
+            <li class="hex">
+                <a class="hexIn" href="#">
+                    <img src="images/logo/android-robot.png" style="transform: scale(0.6,0.6);" alt="">
+                    <h1>ADVANCED</h1>
+                    <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
+                </a>
+            </li>
+            <li class="hex">
+                <a class="hexIn" href="#">
+                    <img src="images/logo/spring.png" style="transform: scale(0.5,0.5);top:-2%;" alt="">
+                    <h1>ADVANCED</h1>
+                    <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
+                </a>
+            </li>
+            <li class="hex">
+                <a class="hexIn" href="#">
+                    <img src="images/logo/bootstrap.jpg" style="transform: scale(0.6,0.6);" alt="">
+                    <h1>ADVANCED</h1>
+                    <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
+                </a>
+            </li>
+            <li class="hex">
+                <a class="hexIn" href="#">
+                    <img src="images/logo/java.jpg" style="transform:scale(0.9,0.9);top:-4%;" alt="">
+                    <h1>PROFICIENT</h1>
+                    <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
+                </a>
+            </li>
+            <li class="hex">
+                <a class="hexIn" href="#">
+                    <img src="images/logo/js.jpg" style="transform: scale(0.73,0.73);" alt="">
+                    <h1>PROFICIENT</h1>
+                    <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
+                </a>
+            </li>
+            <li class="hex">
+                <a class="hexIn" href="#">
+                    <img src="images/logo/html.jpg" style="transform: scale(0.7,0.7);" alt="">
+                    <h1>PROFICIENT</h1>
+                    <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
+                </a>
+            </li>
+            <li class="hex">
+                <a class="hexIn" href="#">
+                    <img src="images/logo/css.jpg" style="transform: scale(0.73,0.73);" alt="">
+                    <h1>PROFICIENT</h1>
+                    <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
+                </a>
+            </li>
+            <li class="hex">
+                <a class="hexIn" href="#">
+                    <img src="images/logo/mysql.jpg" alt="">
+                    <h1>PROFICIENT</h1>
+                    <p>There are 8 people <span class="fa fa-thumbs-up" ></span>&nbsp;&nbsp;&nbsp; this skill</p>
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>
-<!-- Container (Pricing Section)
-<div id="projects" class="container-fluid">
-    <div class="text-center">
-        <h2>Pricing</h2>
-        <h4>Choose a payment plan that works for you</h4>
-    </div>
-    <div class="row slideanim">
-        <div class="col-sm-4 col-xs-12">
-            <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                    <h1>Basic</h1>
-                </div>
-                <div class="panel-body">
-                    <p><strong>20</strong> Lorem</p>
-                    <p><strong>15</strong> Ipsum</p>
-                    <p><strong>5</strong> Dolor</p>
-                    <p><strong>2</strong> Sit</p>
-                    <p><strong>Endless</strong> Amet</p>
-                </div>
-                <div class="panel-footer">
-                    <h3>$19</h3>
-                    <h4>per month</h4>
-                    <button class="btn btn-lg">Sign Up</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4 col-xs-12">
-            <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                    <h1>Pro</h1>
-                </div>
-                <div class="panel-body">
-                    <p><strong>50</strong> Lorem</p>
-                    <p><strong>25</strong> Ipsum</p>
-                    <p><strong>10</strong> Dolor</p>
-                    <p><strong>5</strong> Sit</p>
-                    <p><strong>Endless</strong> Amet</p>
-                </div>
-                <div class="panel-footer">
-                    <h3>$29</h3>
-                    <h4>per month</h4>
-                    <button class="btn btn-lg">Sign Up</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4 col-xs-12">
-            <div class="panel panel-default text-center">
-                <div class="panel-heading">
-                    <h1>Premium</h1>
-                </div>
-                <div class="panel-body">
-                    <p><strong>100</strong> Lorem</p>
-                    <p><strong>50</strong> Ipsum</p>
-                    <p><strong>25</strong> Dolor</p>
-                    <p><strong>10</strong> Sit</p>
-                    <p><strong>Endless</strong> Amet</p>
-                </div>
-                <div class="panel-footer">
-                    <h3>$49</h3>
-                    <h4>per month</h4>
-                    <button class="btn btn-lg">Sign Up</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>-->
+
 
 <!--Footer-->
 <footer class="page-footer center-on-small-only">
 
     <!--Call to action-->
-    <!--<div class="call-to-action">-->
-        <!--<h4>Material Design for Bootstrap</h4>-->
-        <!--<ul>-->
-            <!--<li>-->
-                <!--<h5>Get our UI KIT for free</h5></li>-->
-            <!--<li><a target="_blank" href="http://mdbootstrap.com/getting-started/" class="btn btn-danger">Sign up!</a></li>-->
-            <!--<li><a target="_blank" href="http://mdbootstrap.com/material-design-for-bootstrap/" class="btn btn-default">Learn more</a></li>-->
-        <!--</ul>-->
-    <!--</div>-->
+    <div class="call-to-action">
+        <h4>Material Design for Bootstrap</h4>
+        <ul>
+            <li>
+                <h5>Get our UI KIT for free</h5></li>
+            <li><a target="_blank" href="http://mdbootstrap.com/getting-started/" class="btn btn-danger">Sign up!</a></li>
+            <li><a target="_blank" href="http://mdbootstrap.com/material-design-for-bootstrap/" class="btn btn-default">Learn more</a></li>
+        </ul>
+    </div>
     <!--/.Call to action-->
 
     <!--Copyright-->
@@ -564,7 +405,6 @@
 
 </footer>
 <!--/.Footer-->
-
 
 <!-- SCRIPTS -->
 
@@ -579,6 +419,8 @@
 
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="js/mdb.min.js"></script>
+<!-- Material UI Javascript-->
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
 <script>
     $(document).ready(function(){
