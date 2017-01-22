@@ -113,8 +113,7 @@ public class HttpRequest {
         }
         return null;
     }
-
-    /**
+    /*
      * Check if there has parameters
      * @return
      */

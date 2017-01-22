@@ -47,7 +47,6 @@
     width: auto;
     height: 100%;
     margin: 0 auto;
-    transition:filter 0.2s ;
 }
 
 .hex h1, .hex p {
@@ -96,9 +95,6 @@
     -webkit-transform:translateY(0%) translatez(-1px);
     -ms-transform:translateY(0%) translatez(-1px);
     transform:translateY(0%) translatez(-1px);
-}
-.hexIn:hover img, .hexIn:focus img{
-    filter:blur(4px);
 }
 
 /*** SPACING AND SIZING *****************************************************************/

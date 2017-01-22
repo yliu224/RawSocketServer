@@ -27,7 +27,7 @@ body,
 }
 
 footer.page-footer {
-    background-color: #1C2331;
+    background-color: #293a48;
     margin-top: 0;
 }
 
@@ -49,19 +49,19 @@ footer.page-footer {
 }
 
 .carousel-item:nth-child(1) {
-    background-image: url("http://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20(1).jpg");
+    background-image: url("http://localhost:8000/images/carousel/home1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .carousel-item:nth-child(2) {
-    background-image: url("http://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20(2).jpg");
+    background-image: url("http://localhost:8000/images/carousel/home2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .carousel-item:nth-child(3) {
-    background-image: url("http://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20(3).jpg");
+    background-image: url("http://localhost:8000/images/carousel/home3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -127,7 +127,7 @@ footer.page-footer {
 }
 /*Background*/
 .bg-grey{
-    background-color: #1C2331;
+    background-color: #293a48;
 }
 /*Icon styles*/
 .icon-4{
