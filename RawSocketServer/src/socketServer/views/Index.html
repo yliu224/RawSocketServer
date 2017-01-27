@@ -173,7 +173,7 @@
         <!--First columnn-->
         <div class="col-md-4">
             <!--Card-->
-            <div class="card wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+            <div class="card slideanim">
 
                 <!--Card image-->
                 <div class="view overlay hm-white-slight">
@@ -210,7 +210,7 @@
         <!--Second column-->
         <div class="col-md-4">
             <!--Card-->
-            <div class="card wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+            <div class="card slideanim">
 
                 <!--Card image-->
                 <div class="view overlay hm-white-slight">
@@ -238,7 +238,7 @@
         <!--Third column-->
         <div class="col-md-4">
             <!--Card-->
-            <div class="card wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+            <div class="card slideanim">
 
                 <!--Card image-->
                 <div class="view overlay hm-white-slight">
@@ -442,18 +442,22 @@
         });
 
         //Add like button function
+        $(".hex a").on('click',function (event) {
+            event.preventDefault();
+        });
 
+        //Slide animation
         $(window).scroll(function() {
             $(".slideanim").each(function(){
                 var pos = $(this).offset().top;
 
                 var winTop = $(window).scrollTop();
-                if (pos < winTop + 600) {
+                if (pos < winTop + 900) {
                     $(this).addClass("slide");
                 }
             });
         });
-    })
+    });
 </script>
 <script>
     /*Google Analytic code*/
