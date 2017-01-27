@@ -452,7 +452,8 @@
                 var pos = $(this).offset().top;
 
                 var winTop = $(window).scrollTop();
-                if (pos < winTop + 900) {
+                var height=$(window).height();
+                if (pos < winTop + height) {
                     $(this).addClass("slide");
                 }
             });
